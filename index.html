@@ -39,13 +39,14 @@
             <ul>
               <!---------Name Starts Here---------->
               <li class="zf-tempFrmWrapper zf-name zf-namelarge">
-                <label class="zf-labelName" style="display: none;">
+                <label class="zf-labelName" style="display: none">
                   Name
                   <em class="zf-important">*</em>
                 </label>
                 <div class="zf-tempContDiv zf-twoType">
                   <div class="zf-nameWrapper">
-                    <span>
+                    <div class="main-f">
+                    <span class="col1">
                       <label class="zf-labelName">
                         Vorname
                         <em class="zf-important">*</em>
@@ -59,7 +60,7 @@
                       />
                     </span>
 
-                    <span>
+                    <span class="col2">
                       <label class="zf-labelName">
                         Nachname
                         <em class="zf-important">*</em>
@@ -72,7 +73,7 @@
                         placeholder=""
                       />
                     </span>
-
+                  </div>
                     <div class="zf-clearBoth"></div>
                   </div>
                   <p
@@ -86,134 +87,144 @@
                 <div class="zf-clearBoth"></div>
               </li>
               <!---------Name Ends Here---------->
-              <!---------Email Starts Here---------->
-              <li class="zf-tempFrmWrapper zf-large">
-                <label class="zf-labelName"> E-Mail <em class="zf-important">*</em></label>
-                <div class="zf-tempContDiv">
-                  <span>
-                    <input
-                      fieldType="9"
-                      type="text"
-                      maxlength="255"
-                      name="Email"
-                      checktype="c5"
-                      value=""
-                      placeholder=""
-                      id="Email"
-                  /></span>
-                  <p
-                    id="Email_error"
-                    class="zf-errorMessage"
-                    style="display: none"
+              <div class="main-f">
+                <!---------Email Starts Here---------->
+                <li class="zf-tempFrmWrapper zf-large col1">
+                  <label class="zf-labelName">
+                    E-Mail <em class="zf-important">*</em></label
                   >
-                    Ungültiger Wert
-                  </p>
-                </div>
-                <div class="zf-clearBoth"></div>
-              </li>
-              <!---------Email Ends Here---------->
-              <!---------Phone Starts Here---------->
-              <li class="zf-tempFrmWrapper zf-large">
-                <label class="zf-labelName"> Telefon&#x2f;MobilNr. <em class="zf-important">*</em></label>
-                <div class="zf-tempContDiv zf-phonefld">
-                  <div class="zf-phwrapper zf-phNumber">
+                  <div class="zf-tempContDiv">
+                    <span>
+                      <input
+                        fieldType="9"
+                        type="text"
+                        maxlength="255"
+                        name="Email"
+                        checktype="c5"
+                        value=""
+                        placeholder=""
+                        id="Email"
+                    /></span>
+                    <p
+                      id="Email_error"
+                      class="zf-errorMessage"
+                      style="display: none"
+                    >
+                      Ungültiger Wert
+                    </p>
+                  </div>
+                  <div class="zf-clearBoth"></div>
+                </li>
+                <!---------Email Ends Here---------->
+                <!---------Phone Starts Here---------->
+                <li class="zf-tempFrmWrapper zf-large col2">
+                  <label class="zf-labelName">
+                    Telefon&#x2f;MobilNr. <em class="zf-important">*</em></label
+                  >
+                  <div class="zf-tempContDiv zf-phonefld">
+                    <div class="zf-phwrapper zf-phNumber">
+                      <span>
+                        <input
+                          type="text"
+                          compname="PhoneNumber"
+                          name="PhoneNumber_countrycode"
+                          maxlength="20"
+                          checktype="c7"
+                          value=""
+                          phoneFormat="1"
+                          isCountryCodeEnabled="false"
+                          fieldType="11"
+                          id="international_PhoneNumber_countrycode"
+                          valType="number"
+                          phoneFormatType="1"
+                          placeholder=""
+                        />
+                      </span>
+                      <div class="zf-clearBoth"></div>
+                    </div>
+                    <p
+                      id="PhoneNumber_error"
+                      class="zf-errorMessage"
+                      style="display: none"
+                    >
+                      Ungültiger Wert
+                    </p>
+                  </div>
+                  <div class="zf-clearBoth"></div>
+                </li>
+                <!---------Phone Ends Here---------->
+              </div>
+              <div class="main-f">
+                <!---------Dropdown Starts Here---------->
+                <li class="zf-tempFrmWrapper zf-large col1">
+                  <label class="zf-labelName">
+                    Grund der Kontaktaufnahme
+                    <em class="zf-important">*</em>
+                  </label>
+                  <div class="zf-tempContDiv">
+                    <select class="zf-form-sBox" name="Dropdown" checktype="c1">
+                      <option selected="true" value="-Select-" disabled>
+                        Wählen
+                      </option>
+                      <option value="Bestellung">Bestellung</option>
+                      <option value="Reparatur">Reparatur</option>
+                      <option value="Garantieregistrierung">
+                        Garantieregistrierung
+                      </option>
+                      <option
+                        value="Lieferung&#x20;in&#x20;L&auml;nder&#x20;au&szlig;erhalb&#x20;Deutschlands"
+                      >
+                        Lieferung in L&auml;nder au&szlig;erhalb Deutschlands
+                      </option>
+                      <option value="Pod&#x20;Anfrage">Pod Anfrage</option>
+                      <option value="Zahlung&#x20;&#x2f;&#x20;Rechnung">
+                        Zahlung &#x2f; Rechnung
+                      </option>
+                      <option value="Allgemeine&#x20;Anfrage">
+                        Allgemeine Anfrage
+                      </option>
+                      <option value="Virtuelle&#x20;Assistenz">
+                        Virtuelle Assistenz
+                      </option>
+                    </select>
+                    <p
+                      id="Dropdown_error"
+                      class="zf-errorMessage"
+                      style="display: none"
+                    >
+                      Ungültiger Wert
+                    </p>
+                  </div>
+                  <div class="zf-clearBoth"></div>
+                </li>
+                <!---------Dropdown Ends Here---------->
+                <!---------Number Starts Here---------->
+                <li class="zf-tempFrmWrapper zf-large col2">
+                  <label class="zf-labelName">
+                    BestellNr. &#x28;Optional&#x29;
+                  </label>
+                  <div class="zf-tempContDiv">
                     <span>
                       <input
                         type="text"
-                        compname="PhoneNumber"
-                        name="PhoneNumber_countrycode"
-                        maxlength="20"
-                        checktype="c7"
+                        name="Number"
+                        checktype="c2"
                         value=""
-                        phoneFormat="1"
-                        isCountryCodeEnabled="false"
-                        fieldType="11"
-                        id="international_PhoneNumber_countrycode"
-                        valType="number"
-                        phoneFormatType="1"
+                        maxlength="18"
                         placeholder=""
-                      />
-                    </span>
-                    <div class="zf-clearBoth"></div>
-                  </div>
-                  <p
-                    id="PhoneNumber_error"
-                    class="zf-errorMessage"
-                    style="display: none"
-                  >
-                    Ungültiger Wert
-                  </p>
-                </div>
-                <div class="zf-clearBoth"></div>
-              </li>
-              <!---------Phone Ends Here---------->
-              <!---------Dropdown Starts Here---------->
-              <li class="zf-tempFrmWrapper zf-large">
-                <label class="zf-labelName">
-                  Grund der Kontaktaufnahme
-                  <em class="zf-important">*</em>
-                </label>
-                <div class="zf-tempContDiv">
-                  <select class="zf-form-sBox" name="Dropdown" checktype="c1">
-                    <option selected="true" value="-Select-" disabled>Wählen</option>
-                    <option value="Bestellung">Bestellung</option>
-                    <option value="Reparatur">Reparatur</option>
-                    <option value="Garantieregistrierung">
-                      Garantieregistrierung
-                    </option>
-                    <option
-                      value="Lieferung&#x20;in&#x20;L&auml;nder&#x20;au&szlig;erhalb&#x20;Deutschlands"
+                    /></span>
+                    <p
+                      id="Number_error"
+                      class="zf-errorMessage"
+                      style="display: none"
                     >
-                      Lieferung in L&auml;nder au&szlig;erhalb Deutschlands
-                    </option>
-                    <option value="Pod&#x20;Anfrage">Pod Anfrage</option>
-                    <option value="Zahlung&#x20;&#x2f;&#x20;Rechnung">
-                      Zahlung &#x2f; Rechnung
-                    </option>
-                    <option value="Allgemeine&#x20;Anfrage">
-                      Allgemeine Anfrage
-                    </option>
-                    <option value="Virtuelle&#x20;Assistenz">
-                      Virtuelle Assistenz
-                    </option>
-                  </select>
-                  <p
-                    id="Dropdown_error"
-                    class="zf-errorMessage"
-                    style="display: none"
-                  >
-                    Ungültiger Wert
-                  </p>
-                </div>
-                <div class="zf-clearBoth"></div>
-              </li>
-              <!---------Dropdown Ends Here---------->
-              <!---------Number Starts Here---------->
-              <li class="zf-tempFrmWrapper zf-large">
-                <label class="zf-labelName">
-                  BestellNr. &#x28;Optional&#x29;
-                </label>
-                <div class="zf-tempContDiv">
-                  <span>
-                    <input
-                      type="text"
-                      name="Number"
-                      checktype="c2"
-                      value=""
-                      maxlength="18"
-                      placeholder=""
-                  /></span>
-                  <p
-                    id="Number_error"
-                    class="zf-errorMessage"
-                    style="display: none"
-                  >
-                    Ungültiger Wert
-                  </p>
-                </div>
-                <div class="zf-clearBoth"></div>
-              </li>
-              <!---------Number Ends Here---------->
+                      Ungültiger Wert
+                    </p>
+                  </div>
+                  <div class="zf-clearBoth"></div>
+                </li>
+                <!---------Number Ends Here---------->
+              </div>
               <!---------Single Line Starts Here---------->
               <li class="zf-tempFrmWrapper zf-large">
                 <label class="zf-labelName">
@@ -285,7 +296,13 @@
       var zf_MonthYearRegex = new RegExp(
         "^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$"
       );
-      var zf_MandArray = ["Name_Last","Email","PhoneNumber_countrycode", "Dropdown", "SingleLine"];
+      var zf_MandArray = [
+        "Name_Last",
+        "Email",
+        "PhoneNumber_countrycode",
+        "Dropdown",
+        "SingleLine",
+      ];
       var zf_FieldArray = [
         "Name_First",
         "Name_Last",
