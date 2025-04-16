@@ -3,6 +3,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact&#x20;US&#x20;EU&#x20;DE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link href="css/form.css" rel="stylesheet" type="text/css" />
     <script src="js/validation.js"></script>
   </head>
@@ -34,6 +40,15 @@
           value=""
         /><!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
         <div class="zf-templateWrapper">
+          <!---------template Header Starts Here---------->
+          <ul class="zf-tempHeadBdr">
+            <li class="zf-tempHeadContBdr">
+              <h2 class="zf-frmTitle"><em>SCHICKE UNS EINE NACHRICHT</em></h2>
+              <p class="zf-frmDesc"></p>
+              <div class="zf-clearBoth"></div>
+            </li>
+          </ul>
+          <!---------template Header Ends Here---------->
           <!---------template Container Starts Here---------->
           <div class="zf-subContWrap zf-topAlign">
             <ul>
@@ -46,34 +61,34 @@
                 <div class="zf-tempContDiv zf-twoType">
                   <div class="zf-nameWrapper">
                     <div class="main-f">
-                    <span class="col1">
-                      <label class="zf-labelName">
-                        Vorname
-                        <em class="zf-important">*</em>
-                      </label>
-                      <input
-                        type="text"
-                        maxlength="255"
-                        name="Name_First"
-                        fieldType="7"
-                        placeholder=""
-                      />
-                    </span>
+                      <span class="col1">
+                        <label class="zf-labelName">
+                          Vorname
+                          <em class="zf-important">*</em>
+                        </label>
+                        <input
+                          type="text"
+                          maxlength="255"
+                          name="Name_First"
+                          fieldType="7"
+                          placeholder=""
+                        />
+                      </span>
 
-                    <span class="col2">
-                      <label class="zf-labelName">
-                        Nachname
-                        <em class="zf-important">*</em>
-                      </label>
-                      <input
-                        type="text"
-                        maxlength="255"
-                        name="Name_Last"
-                        fieldType="7"
-                        placeholder=""
-                      />
-                    </span>
-                  </div>
+                      <span class="col2">
+                        <label class="zf-labelName">
+                          Nachname
+                          <em class="zf-important">*</em>
+                        </label>
+                        <input
+                          type="text"
+                          maxlength="255"
+                          name="Name_Last"
+                          fieldType="7"
+                          placeholder=""
+                        />
+                      </span>
+                    </div>
                     <div class="zf-clearBoth"></div>
                   </div>
                   <p
@@ -281,7 +296,7 @@
           <!---------template Container Starts Here---------->
           <ul>
             <li class="zf-fmFooter">
-              <button class="zf-submitColor">Absenden</button>
+              <button class="zf-submitColor" style="text-transform: uppercase;">Absenden</button>
             </li>
           </ul>
         </div>
