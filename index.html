@@ -360,6 +360,19 @@
       window.addEventListener("message", function (event) {
         var email = event.data;
         document.getElementById("Email").value = email;
+        let checkField = setInterval(function () {
+          if ($("#Email").val() !== "") {
+            $("#loader").hide();
+            clearInterval(checkField);
+          }
+        }, 100);
+        $("#loader").hide();
+      });
+    </script>
+    <script>
+      window.addEventListener("message", function (event) {
+        var email = event.data;
+        document.getElementById("Email").value = email;
 
         if (event.data.utm_medium) {
       const UTMmedium = document.getElementById("UTM");
