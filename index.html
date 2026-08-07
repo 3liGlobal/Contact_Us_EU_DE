@@ -19,7 +19,7 @@
         action="https://forms.zohopublic.eu/ookaportal/form/ContactUSEUDE/formperma/x8ThAdJXrG_AQ8v1z9kRRXUbQacxuQRatL2MfBHps0w/htmlRecords/submit"
         name="form"
         method="POST"
-        onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
+        onSubmit='javascript:document.charset="UTF-8"; if (typeof zf_toggleTicketField === "function") { zf_toggleTicketField(); } return zf_ValidateAndSubmit();'
         accept-charset="UTF-8"
         enctype="multipart/form-data"
         id="form"
@@ -177,30 +177,25 @@
                     <em class="zf-important">*</em>
                   </label>
                   <div class="zf-tempContDiv">
-                    <select class="zf-form-sBox" name="Dropdown" checktype="c1">
+                    <select id="Dropdown" class="zf-form-sBox" name="Dropdown" checktype="c1">
                       <option selected="true" value="-Select-" disabled>
                         Wählen
                       </option>
-                      <option value="Bestellung">Bestellung</option>
-                      <option value="Reparatur">Reparatur</option>
-                      <option value="Garantieregistrierung">
-                        Garantieregistrierung
-                      </option>
-                      <option
-                        value="Lieferung&#x20;in&#x20;L&auml;nder&#x20;au&szlig;erhalb&#x20;Deutschlands"
-                      >
-                        Lieferung in L&auml;nder au&szlig;erhalb Deutschlands
-                      </option>
-                      <option value="Pod&#x20;Anfrage">Pod Anfrage</option>
-                      <option value="Zahlung&#x20;&#x2f;&#x20;Rechnung">
-                        Zahlung &#x2f; Rechnung
-                      </option>
-                      <option value="Allgemeine&#x20;Anfrage">
-                        Allgemeine Anfrage
-                      </option>
-                      <option value="Virtuelle&#x20;Assistenz">
-                        Virtuelle Assistenz
-                      </option>
+                     
+                                    <option value="Bestellung">Bestellung</option>
+                                    <option value="Reparatur">Reparatur</option>
+                                    <option value="Garantieregistrierung">Garantieregistrierung</option>
+                                    <option value="Lieferung in Länder außerhalb Deutschlands">Lieferung in Länder
+                                        außerhalb Deutschlands</option>
+                                    <option value="Pod Anfrage">Pod Anfrage</option>
+                                    <option value="Zahlung / Rechnung">Zahlung / Rechnung</option>
+                                    <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+                                    <option value="Virtuelle Assistenz">Virtuelle Assistenz</option>
+                                    <option value="Nachverfolgen">Nachverfolgen</option>
+                                    <option value="PAE (Potenzielle unerwünschte Ereignisse)">PAE (Potenzielle
+                                        unerwünschte Ereignisse)</option>
+                                    <option value="Rückgabe/Umtausch">Rückgabe/Umtausch</option>
+                                    <option value="Bestellung stornieren">Bestellung stornieren</option>
                     </select>
                     <p
                       id="Dropdown_error"
@@ -242,6 +237,7 @@
               </div>
               <!---------Single Line Starts Here---------->
               <li class="zf-tempFrmWrapper zf-large">
+
                 <label class="zf-labelName">
                   Thema
                   <em class="zf-important">*</em>
@@ -266,6 +262,18 @@
                   </p>
                 </div>
                 <div class="zf-clearBoth"></div>
+                <div class="zf-tempFrmWrapper zf-large" id="ticketFieldWrapper" style="display: none;"><label class="zf-labelName">
+                                Ticket-ID
+                            </label>
+                            <div class="zf-tempContDiv">
+                                <span>
+                                    <input type="text" id="SingleLine2" name="SingleLine2" checktype="c1" value="" maxlength="255"
+                                        fieldType=1 placeholder="" disabled /> </span>
+                                <p id="SingleLine2_error" class="zf-errorMessage" style="display: none;">Bitte geben Sie eine Ticket-ID ein.
+                                </p>
+                            </div>
+                            <div class="zf-clearBoth"></div>
+                        </div>
               </li>
               <!---------Single Line Ends Here---------->
               <!---------Multiple Line Starts Here---------->
@@ -350,9 +358,45 @@
         "Dropdown",
         "Number",
         "SingleLine",
+        "SingleLine2",
         "MultiLine",
         "SingleLine1"
       ];
+      function zf_toggleTicketField() {
+        var dropdown = document.getElementById("Dropdown");
+        var wrapper = document.getElementById("ticketFieldWrapper");
+        var input = document.getElementById("SingleLine2");
+        var isTracking = dropdown && dropdown.value === "Nachverfolgen";
+
+        if (wrapper) {
+          wrapper.style.display = isTracking ? "block" : "none";
+        }
+
+        if (input) {
+          input.disabled = !isTracking;
+          if (!isTracking) {
+            input.value = "";
+          }
+        }
+
+        var index = zf_MandArray.indexOf("SingleLine2");
+        if (isTracking) {
+          if (index === -1) {
+            zf_MandArray.push("SingleLine2");
+          }
+        } else if (index > -1) {
+          zf_MandArray.splice(index, 1);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        zf_toggleTicketField();
+        var dropdown = document.getElementById("Dropdown");
+        if (dropdown) {
+          dropdown.addEventListener("change", zf_toggleTicketField);
+        }
+      });
+
       var isSalesIQIntegrationEnabled = false;
       var salesIQFieldsArray = [];
     </script>
