@@ -267,9 +267,11 @@
                             </label>
                             <div class="zf-tempContDiv">
                                 <span>
-                                    <input type="text" id="SingleLine2" name="SingleLine2" checktype="c1" value="" maxlength="255"
-                                        fieldType=1 placeholder="" disabled /> </span>
-                                <p id="SingleLine2_error" class="zf-errorMessage" style="display: none;">Bitte geben Sie eine Ticket-ID ein.
+                                    <input type="text" id="SingleLine2" name="SingleLine2" checktype="c2" value="" maxlength="255"
+                                        fieldType=1 placeholder="Nur Zahlen, z. B. 123456" inputmode="numeric" pattern="[0-9]*"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                        disabled /> </span>
+                                <p id="SingleLine2_error" class="zf-errorMessage" style="display: none;">Bitte geben Sie eine gültige Ticket-ID ein (nur Zahlen).
                                 </p>
                             </div>
                             <div class="zf-clearBoth"></div>
